@@ -1,0 +1,878 @@
+
+body{
+         background: -webkit-linear-gradient( hsl(118, 48%, 89%),hsl(127, 82%, 76%));
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*.................HOME..................................*/
+
+/* Wrapper */
+.wrapper {
+    width: 100%;
+}
+
+/* Header styles */
+.header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.iglogo {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+/* Heading */
+#changing-heading {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    margin-top: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+/* Section background */
+.sec_img {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('images/library-background.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Inner box styling */
+.box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 40px 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari/Chrome support */
+    
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Heading styling */
+.welcome-text {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Timing styling */
+.timing {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .welcome-text {
+        font-size: 30px;
+    }
+
+    .timing {
+        font-size: 20px;
+    }
+
+    .box {
+        padding: 30px 20px;
+    }
+}
+
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+/*.............................................*/
+/*.........login page.......*/
+/* Header Styles */
+header {
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+}
+header h1 {
+    font-size: 28px;
+    margin: 0;
+    animation: colorChange 5s infinite alternate;
+}
+header .home-btn {
+    background-color: white;
+    color: #010105;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+header .home-btn:hover {
+    background-color: #ffd700;
+    color: #333;
+}
+
+/* Existing animation */
+@keyframes colorChange {
+    0% { color: #fff; }
+    50% { color: #ffd700; }
+    100% { color: #00ffea; }
+}
+
+/* Login Page Styles */
+.login-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.row {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.login-form {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 30px 20px;
+    border-radius: 15px;
+    width: 300px;
+    margin: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+.login-form h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.form-control {
+    margin-bottom: 15px;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+.btnSubmit {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 25px;
+    background-color: #667eea;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.btnSubmit:hover {
+    background-color: #764ba2;
+    transform: translateY(-3px);
+}
+.error-label {
+    color: red;
+    font-size: 12px;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+.alert-message {
+    background-color: #ffdddd;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-left: 6px solid #f44336;
+    width: 90%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+    footer {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    footer h3 {
+        margin-bottom: 20px;
+    }
+    
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .fa {
+        padding: 10px;
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .fa:hover {
+        opacity: 0.7;
+    }
+    
+    /* Different platform colors */
+    .fa-facebook {
+        background: #3B5998;
+        color: white;
+    }
+    
+    .fa-twitter {
+        background: #55ACEE;
+        color: white;
+    }
+    
+    .fa-google {
+        background: #dd4b39;
+        color: white;
+    }
+    
+    .fa-instagram {
+        background: #125688;
+        color: white;
+    }
+    
+    .fa-yahoo {
+        background: #400297;
+        color: white;
+    }
+    
+    /* Mobile Responsive Tweaks */
+    @media (max-width: 600px) {
+        .social-icons {
+            gap: 10px;
+        }
+    
+        .fa {
+            width: 35px;
+            height: 35px;
+            font-size: 18px;
+        }
+    }
+    
+/*
+
+.alert h4 {
+    text-align: center;
+    color: #d9534f;
+    margin-bottom: 20px;
+    font-weight: 600;
+}*/
+.alert-wrapper {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.alert {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+
+/* Login Form Styles */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.login-form {
+    background: linear-gradient(hsl(94, 31%, 59%), hwb(126 82% 10%));
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    flex: 1 1 400px;
+    max-width: 500px;
+    color: #fff;
+}
+
+.login-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.error-label {
+    color: #ffcdd2;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.btnSubmit {
+    width: 100%;
+    background-color: #fff;
+    color: #0062cc;
+    font-weight: 800;
+    padding: 12px;
+    margin: auto;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btnSubmit:hover {
+    background-color: #e6f0ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .heading h1 {
+        font-size: 2rem;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-form {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-control, .btnSubmit {
+        font-size: 0.95rem;
+    }
+
+    .heading h1 {
+        font-size: 1.75rem;
+    }
+}
+/*.........................................................................................*/
+.imglogo{
+    margin-top: 0;
+    width:200px;
+    height:200px;
+}
+h4,h5{
+    text-align: center;
+    color: #0d0d45;
+   
+}
+h5{
+    background-color: hsl(44, 86%, 70%);
+    height: 40px;
+    width: 100%;
+}
+input{
+margin-left:20px;
+}
+.actionPerform {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.actionSol{
+    margin: auto;
+    background: transparent;
+    border: 2px solid #0d0d45;
+}   
+.detail{
+   margin: auto;
+   padding: 10px;
+    border: 2px solid rgb(243, 156, 5);
+}
+
+
+
+/*..............admin_service_dashboard..............*/
+
+/* user
+
+.innerright {
+    width: 100%;
+    padding: 30px;
+    margin-left: 250px;
+    border-radius: 10px;  
+    max-width: 550px;
+}
+*/
+.head{
+   text-align: center; /* Space for the toggle button */
+    font-size: 24px;
+    font-weight: bold;
+    background-color: hsl(168, 38%, 38%);
+  }
+.h-img{
+    width: 50px;
+    height:50px;
+}
+.logo{
+    width: 60px;
+    height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/*.sidebar {
+    width: 250px;
+    height: 100%;
+    background: -webkit-linear-gradient(hsl(238, 95%, 16%), #42d7ee);
+    overflow: scroll;
+   position: fixed;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0px;
+}
+    
+
+/* Sidebar buttons 
+.greenbtn {
+    width: 90%;
+    background: #070e0f;
+    text-align: left;
+    color: white;
+    padding: 12px;
+    border: none;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.greenbtn img {
+    margin-right: 10px;
+}
+
+.greenbtn:hover {
+    background-color: #1abc9c;
+}*/
+/*...............................SIDEBAR.....................................................*/
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(hsl(95, 58%, 82%), #92d4ac);
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Sidebar Toggle for Mobile */
+.sidebar-toggle {
+    display: none; /* Hide the toggle button on larger screens */
+    position: fixed;
+    z-index: 1000;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    padding:5px;
+    margin-bottom:5px;
+    text-align: center;
+  }
+
+/*  Sidebar Button Styles */
+.greenbtn {
+    width: 90%;
+    background: #070e0f;
+    text-align: left;
+    color: white;
+    padding: 12px;
+    border: none;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.greenbtn:hover {
+    background: #124559;
+}
+
+.icons {
+    margin-right: 12px;
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: absolute;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1100;
+    }
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+
+
+/* Right side ka content adjust karna */
+.rightinnerdiv {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .rightinnerdiv {
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.imglogo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.inerright {
+    width: 90%;
+    max-width: 800px;
+    background-color: #ffde82;
+    padding: 20px;
+    margin: 50px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2), 0 9px 26px rgba(0, 0, 0, 0.19);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto;
+    display: block;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    background-color: #16a085;
+    color: white;
+}
+
+td button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #2980b9;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+td button:hover {
+    background-color: #3498db;
+}
+
+/* Form fields */
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0 12px 0;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+.user_greenbtn{
+    background-color: #28a745;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.user_greenbtn:hover {
+    background-color: #218838;
+}
+
+
+.redbtn {
+    background-color: #dc3545;
+}
+
+.redbtn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .inerright {
+        width: 100%;
+        padding: 15px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .greenbtn, td button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #2c3e50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .form-container, .container {
+        width: 95%;
+    }
+}
+/* SEARCH BAR*/
+
+input[type="text"] {
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    margin-left: 5px;
+}
+
+/* USER TABLE*/
+.portion {
+    display: none;
+    width: 100%;
+  }
+.table-outer-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 19%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  .custom-table-container {
+    width: 95%;
+  max-width: 800px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  overflow-x: auto;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+
+
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  
+  .custom-table th {
+    background-color: #0e042d;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+@media (max-width: 768px) {
+    .custom-table,
+    .custom-table th,
+    .custom-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .custom-table-container {
+        max-height: 300px;
+    }
+    .table-outer-wrapper{
+    padding: 30px;
+    }
+}
+
+
+
+
+
