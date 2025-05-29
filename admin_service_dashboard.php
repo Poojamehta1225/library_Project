@@ -3,79 +3,339 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
-<html>
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Admin Dashboard</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <link rel="stylesheet" href="css/styles.css">
+        <!-- <link rel="stylesheet" href="style.css"> -->
     </head>
+    <style>
+   /* Reset and base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+}
+
+/* Header */
+.header {
+    position: fixed; /* header always stays on top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* fixed height */
+ background-color:hsl(210, 100.00%, 10.60%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+.iglogo {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+#changing-heading {
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Sidebar */
+.leftinnerdiv {
+    background-color: #007bff;
+    padding: 20px 10px;
+    height: 100vh;
+    position: fixed;
+    width: 240px;
+    margin-top: 30px;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    color: white;
+    z-index: 1;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar buttons */
+.greenbtn {
+    background-color: #0069d9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    padding: 12px 10px;
+    margin: 8px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+.greenbtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+
+/* Right panel */
+.rightinnerdiv {
+    margin-left: 260px;
+    margin-top: 30px;
+    background-color:rgb(210, 228, 247);
+    padding: 30px;
+}
+#addbook, #addperson, #bookreport, #bookrequestapprove, #studentrecord, #issuebookreport, #issuebook{
+    margin-top: 15px;
+    background-color:rgb(154, 197, 164);
+}
+
+/* Content sections */
+.portion {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #343a40;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="date"],
+form input[type="password"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    margin-bottom: 20px;
+    transition: border 0.3s ease;
+    font-size: 15px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+form button,
+form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s;
+    display: inline-block;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Radio button group */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    background-color: #f1f3f5;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.radio-group label:hover {
+    background-color: #dee2e6;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+    accent-color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    form button,
+    form input[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: center;
+}
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+td {
+    background-color: #f8f9fa;
+}
+
+/* Approve button inside tables */
+.tablebtn, .btn-primary {
+    background-color: #28a745 !important;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.tablebtn:hover, .btn-primary:hover {
+    background-color: #218838 !important;
+    transform: scale(1.03);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .leftinnerdiv {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .greenbtn {
+        width: 48%;
+        margin: 5px 1%;
+        font-size: 14px;
+    }
+
+    .rightinnerdiv {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .portion {
+        padding: 20px;
+    }
+}
+
+</style>
+     <header class="header">
+        <div class="logo">
+            <img class="iglogo" src="images/logo1.png" alt="Library Logo">
+        </div>
+        <h1 id="changing-heading">Book Adda Digital Library</h1>
+    </header>
     <body >
 
     <?php
-    //.......temp for now
-    session_start();
-    echo 'User ID: ' . $_SESSION['userid'] . '<br>';
-    echo 'Role: ' . $_SESSION['role'] . '<br>';
-    //
    include("data_class.php");
 
-$msg = "";
+$msg="";
 
-if (!empty($_REQUEST['msg'])) {
-    $msg = $_REQUEST['msg'];
+   if(!empty($_REQUEST['msg'])){
+    $msg=$_REQUEST['msg'];
+ }
+
+if($msg=="done"){
+    echo "<div class='alert alert-success' role='alert'>Sucssefully Done</div>";
 }
-?>
+elseif($msg=="fail"){
+    echo "<div class='alert alert-danger' role='alert'>Fail</div>";
+}
 
-<?php if ($msg == "done"): ?>
-    <div class="alert alert-success" role="alert" id="alertBox">Successfully Done</div>
-<?php elseif ($msg == "fail"): ?>
-    <div class="alert alert-danger" role="alert" id="alertBox">Fail</div>
-<?php endif; ?>
-<!-- Page Heading -->
-    <h1 class="head">BookAdda Digital Library <img  class="h-img" src="images/logo1.png" alt="logo"></h1>
+    ?>
 
-<div class="container">
-<!-- Toggle Button for Mobile View -->
-<div class="sidebar-toggle" onclick="toggleSidebar()">☰ Menu</div>
+            <div class="leftinnerdiv">
+                <!-- <Button class="greenbtn"> ADMIN</Button> -->
+                <br>
+                <Button class="greenbtn" onclick="openpart('addbook')" ><img class="icons" src="images/icon/book.png" width="30px" height="30px"/>  ADD BOOK</Button>
+                <Button class="greenbtn" onclick="openpart('bookreport')" > <img class="icons" src="images/icon/open-book.png" width="30px" height="30px"/> BOOK REPORT</Button>
+                <Button class="greenbtn" onclick="openpart('bookrequestapprove')"><img class="icons" src="images/icon/interview.png" width="30px" height="30px"/> BOOK REQUESTS</Button>
+                <Button class="greenbtn" onclick="openpart('addperson')"> <img class="icons" src="images/icon/add-user.png" width="30px" height="30px"/> ADD STUDENT</Button>
+                <Button class="greenbtn" onclick="openpart('studentrecord')"> <img class="icons" src="images/icon/monitoring.png" width="30px" height="30px"/> STUDENT REPORT</Button>
+                <Button class="greenbtn"  onclick="openpart('issuebook')"> <img class="icons" src="images/icon/test.png" width="30px" height="30px"/> ISSUE BOOK</Button>
+                <Button class="greenbtn" onclick="openpart('issuebookreport')"> <img class="icons" src="images/icon/checklist.png" width="30px" height="30px"/> ISSUE REPORT</Button>
+                <a href="index.php"><Button class="greenbtn" ><img class="icons" src="images/icon/book.png" width="30px" height="30px"/> LOGOUT</Button></a>
+            </div>
 
-
-<div class="sidebar" id="sidebar">
-    <button class="greenbtn" onclick="openpart('addbook')">
-        <img class="icons" src="images/icon/book.png" /> ADD BOOK
-    </button>
-    <button class="greenbtn" onclick="openpart('bookreport')">
-        <img class="icons" src="images/icon/open-book.png" /> BOOK REPORT
-    </button>
-    <button class="greenbtn" onclick="openpart('bookrequestapprove')">
-        <img class="icons" src="images/icon/interview.png" /> BOOK REQUESTS
-    </button>
-    <button class="greenbtn" onclick="openpart('addperson')">
-        <img class="icons" src="images/icon/add-user.png" /> ADD STUDENT
-    </button>
-    <button class="greenbtn" onclick="openpart('studentrecord')">
-        <img class="icons" src="images/icon/monitoring.png" /> STUDENT REPORT
-    </button>
-    <button class="greenbtn" onclick="openpart('issuebook')">
-        <img class="icons" src="images/icon/test.png" /> ISSUE BOOK
-    </button>
-    <button class="greenbtn" onclick="openpart('issuebookreport')">
-        <img class="icons" src="images/icon/checklist.png" /> ISSUE REPORT
-    </button>
-    <a href="index.php">
-        <button class="greenbtn">
-            <img class="icons" src="images/icon/book.png" /> LOGOUT
-        </button>
-    </a>
-</div>
-<!-- ADMIN RIGHT SIDE--> 
             <div class="rightinnerdiv">   
-            <div id="bookrequestapprove" class="inerright portion" style="display:none">
+                <div id="bookrequestapprove" class="innerright portion" style="display:none">
             <Button class="greenbtn" >BOOK REQUEST APPROVE</Button>
 
             <?php
@@ -107,21 +367,26 @@ if (!empty($_REQUEST['msg'])) {
             echo $table;
             ?>
 
-            </div>
-            </div>
-
-            <div class="rightinnerdiv">   
-            <div id="addbook" class="inerright portion" style="<?php  if(!empty($_REQUEST['viewid'])){ echo "display:none";} else {echo ""; }?>">
-            <Button class="greenbtn" >ADD NEW BOOK</Button>
+                </div>
+                <!--addbook--> 
+                <div id="addbook" class=" portion" style="<?php  if(!empty($_REQUEST['viewid'])){ echo "display:none";} else {echo ""; }?>">
+            <Button class="tablebtn" >ADD NEW BOOK</Button>
             <br>
             <form action="addbookserver_page.php" method="post" enctype="multipart/form-data">
-            <label>Book Name:</label><input type="text"name="bookname"/>
+            <label>Book Name:</label><input type="text" name="bookname"/>
             </br>
             <label>Detail:</label><input  type="text" name="bookdetail"/></br>
             <label>Autor:</label><input type="text" name="bookaudor"/></br>
             <label>Publication</label><input type="text" name="bookpub"/></br>
-            <div><label>Branch:</label><input type="radio" name="branch" value="other"/>Other<input type="radio" name="branch" value="CSE"/>CSE<div style="margin-left:80px"><input type="radio" name="branch" value="ME"/>BE<input type="radio" name="branch" value="CA"/>CA</div>
-            </div>   
+            <label>Branch:</label>
+<div class="radio-group">
+    <label><input type="radio" name="branch" value="CS"> CS</label>
+    <label><input type="radio" name="branch" value="IT"> IT</label>
+    <label><input type="radio" name="branch" value="ECE"> ECE</label>
+    <label><input type="radio" name="branch" value="EEE"> EEE</label>
+    <label><input type="radio" name="branch" value="ME"> ME</label>
+    <label><input type="radio" name="branch" value="CE"> CE</label>
+</div> 
             <label>Price:</label><input  type="number" name="bookprice"/></br>
             <label>Quantity:</label><input type="number" name="bookquantity"/></br>
             <label>Book Photo</label><input  type="file" name="bookphoto"/></br>
@@ -132,13 +397,10 @@ if (!empty($_REQUEST['msg'])) {
             </br>
 
             </form>
-            </div>
-            </div>
-
-
-            <div class="rightinnerdiv">   
-            <div id="addperson" class="inerright portion" style="display:none">
-            <Button class="greenbtn" >ADD Person</Button>
+                </div>
+        <!--addperson-->
+                 <div id="addperson" class=" portion" style="display:none">
+            <Button class="tablebtn" >ADD Person</Button>
             <form action="addpersonserver_page.php" method="post" enctype="multipart/form-data">
             <label>Name:</label><input type="text" name="addname"/>
             </br>
@@ -153,12 +415,10 @@ if (!empty($_REQUEST['msg'])) {
 
             <input type="submit" value="SUBMIT"/>
             </form>
-            </div>
-            </div>
-
-            <div class="rightinnerdiv">   
-            <div id="studentrecord" class="inerright portion" style="display:none">
-            <Button class="greenbtn" >Student RECORD</Button>
+                 </div>
+        <!--studentrecord..................................................-->   
+                 <div id="studentrecord" class=" portion" style="display:none">
+            <Button class="tablebtn" >Student RECORD</Button>
 
             <?php
             $u=new data;
@@ -182,13 +442,10 @@ if (!empty($_REQUEST['msg'])) {
 
             echo $table;
             ?>
-
-            </div>
-            </div>
-
-            <div class="rightinnerdiv">   
-            <div id="issuebookreport" class="inerright portion" style="display:none">
-            <Button class="greenbtn" >Issue Book Record</Button>
+                </div>
+        <!--...........issuebookreport...................-->
+                 <div id="issuebookreport" class=" portion" style="display:none">
+            <Button class="tablebtn" >Issue Book Record</Button>
 
             <?php
             $u=new data;
@@ -217,15 +474,10 @@ if (!empty($_REQUEST['msg'])) {
             echo $table;
             ?>
 
-            </div>
-            </div>
-
-<!--             
-
-issue book -->
-            <div class="rightinnerdiv">   
-            <div id="issuebook" class="inerright portion" style="display:none">
-            <Button class="greenbtn" >ISSUE BOOK</Button>
+                 </div>
+<!--..........................issue book -->  
+                <div id="issuebook" class=" portion" style="display:none">
+            <Button class="tablebtn" >ISSUE BOOK</Button>
             <form action="issuebook_server.php" method="post" enctype="multipart/form-data">
             <label for="book">Choose Book:</label>
            
@@ -261,13 +513,11 @@ issue book -->
 
             <input type="submit" value="SUBMIT"/>
             </form>
-            </div>
-            </div>
-
-            <div class="rightinnerdiv">   
-            <div id="bookdetail" class="portion" style="<?php  if(!empty($_REQUEST['viewid'])){ $viewid=$_REQUEST['viewid'];} else {echo "display:none"; }?>">
+                </div>
+  <!--..........................bookdetail -->  
+                 <div id="bookdetail" class="portion" style="<?php  if(!empty($_REQUEST['viewid'])){ $viewid=$_REQUEST['viewid'];} else {echo "display:none"; }?>">
             
-            <Button class="greenbtn" >BOOK DETAIL</Button>
+            <Button class="tablebtn" >BOOK DETAIL</Button>
 </br>
 <?php
             $u=new data;
@@ -303,80 +553,38 @@ issue book -->
             <p style="color:black"><u>Book Rent:</u> &nbsp&nbsp<?php echo $bookrent ?></p>
 
 
-            </div>
-            </div>
-
-
-
-           <!-- BOOK REPORT -->
-<div class="rightinnerdiv">
-    <div id="bookreport" class="portion" style="<?php echo empty($_REQUEST['viewid']) ? '' : 'display:none'; ?>">
-        <button class="greenbtn">BOOK REPORT</button><br />
-        <?php
-        $u = new data;
-        $u->setconnection();
-        $recordset = $u->getbook();
-
-        echo "<table><tr>
-                <th>Book Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>View Book</th>
-              </tr>";
-        foreach ($recordset as $row) {
-            echo "<tr>";
-            echo "<td>" . htmlspecialchars($row[2]) . "</td>";
-            echo "<td>" . htmlspecialchars($row[7]) . "</td>";
-            echo "<td>" . htmlspecialchars($row[8]) . "</td>";
-            echo "<td><a href='admin_service_dashboard.php?viewid=" . urlencode($row[0]) . "'><button type='button'>View Book</button></a></td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-        ?>
-    </div>
-</div>
-
-<!-- BOOK DETAIL -->
-<div class="rightinnerdiv">
-    <div id="bookdetail" class="portion" style="<?php echo !empty($_REQUEST['viewid']) ? '' : 'display:none'; ?>">
-        <button class="greenbtn">BOOK DETAIL</button><br />
-        <?php
-        if (!empty($_REQUEST['viewid'])) {
-            $viewid = $_REQUEST['viewid'];
-            $u = new data;
+                 </div>
+            <!--..........................bookreport-->    
+                <div id="bookreport" class="portion" style="display:none">
+            <Button class="tablebtn" >BOOK RECORD</Button>
+            <?php
+            $u=new data;
             $u->setconnection();
-            $recordset = $u->getbookdetail($viewid);
-            if ($recordset) {
-                foreach ($recordset as $row) {
-                    $bookimg = $row[1];
-                    $bookname = $row[2];
-                    $bookdetail = $row[3];
-                    $bookauthour = $row[4];
-                    $bookpub = $row[5];
-                    $branch = $row[6];
-                    $bookprice = $row[7];
-                    $bookava = $row[9];
-                    $bookrent = $row[10];
-                }
-                echo "<img width='150px' height='150px' style='border:1px solid #333; float:left; margin-left:20px;' src='uploads/" . htmlspecialchars($bookimg) . "' alt='Book Image' />";
-                echo "<p><u>Book Name:</u> " . htmlspecialchars($bookname) . "</p>";
-                echo "<p><u>Book Detail:</u> " . htmlspecialchars($bookdetail) . "</p>";
-                echo "<p><u>Book Author:</u> " . htmlspecialchars($bookauthour) . "</p>";
-                echo "<p><u>Book Publisher:</u> " . htmlspecialchars($bookpub) . "</p>";
-                echo "<p><u>Book Branch:</u> " . htmlspecialchars($branch) . "</p>";
-                echo "<p><u>Book Price:</u> " . htmlspecialchars($bookprice) . "</p>";
-                echo "<p><u>Book Available:</u> " . htmlspecialchars($bookava) . "</p>";
-                echo "<p><u>Book Rent:</u> " . htmlspecialchars($bookrent) . "</p>";
-            } else {
-                echo "<p>No book found with this ID.</p>";
-            }
-        }
-        ?>
-    </div>
-</div>
+            $u->getbook();
+            $recordset=$u->getbook();
 
-        </div>
-        
+            $table="<table style='font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 100%;'><tr><th style=' 
+            padding: 8px;'>Book Name</th><th>Price</th><th>Qnt</th><th>Available</th><th>Rent</th></th><th>View</th></tr>";
+            foreach($recordset as $row){
+                $table.="<tr>";
+               "<td>$row[0]</td>";
+                $table.="<td>$row[2]</td>";
+                $table.="<td>$row[7]</td>";
+                $table.="<td>$row[8]</td>";
+                $table.="<td>$row[9]</td>";
+                $table.="<td>$row[10]</td>";
+                $table.="<td><a href='admin_service_dashboard.php?viewid=$row[0]'><button type='button' class='btn btn-primary'>View BOOK</button></a></td>";
+                // $table.="<td><a href='deletebook_dashboard.php?deletebookid=$row[0]'>Delete</a></td>";
+                $table.="</tr>";
+                // $table.=$row[0];
+            }
+            $table.="</table>";
+
+            echo $table;
+            ?>
+
+            </div>
+            </div>
      
         <script>
         function openpart(portion) {
@@ -387,30 +595,20 @@ issue book -->
         }
         document.getElementById(portion).style.display = "block";  
         }
-    // Auto hide the alert after 5 seconds
-    setTimeout(function() {
-        var alertBox = document.getElementById('alertBox');
-        if (alertBox) {
-            alertBox.style.display = 'none';
-        }
-    }, 5000);
 
+        // Color changing heading every 5 seconds
+const heading = document.getElementById("changing-heading");
 
-    function toggleSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("open");
-        }
+// Define colors to cycle through
+const colors = ["#ff5733", "#33ff57", "#3357ff", "#ff33a6", "#f39c12"];
+let currentColor = 0;
 
-
+setInterval(() => {
+    heading.style.color = colors[currentColor];
+    currentColor = (currentColor + 1) % colors.length;
+}, 5000); // 5000ms = 5 seconds
         </script>
-      <!--  <footer>
-        <h4>Download Reports:</h4>
-<a href="generate_reports.php?type=issued_books" target="_blank"><button class="btn btn-info">📚 Issued Books</button></a>
-<a href="generate_reports.php?type=returned_books" target="_blank"><button class="btn btn-success">📦 Returned Books</button></a>
-<a href="generate_reports.php?type=overdue_books" target="_blank"><button class="btn btn-warning">⏳ Overdue Books</button></a>
-<a href="generate_reports.php?type=fine_report" target="_blank"><button class="btn btn-danger">💰 Fine Report</button></a>
-
-        </footer>-->
-        
     </body>
 </html>
+
+

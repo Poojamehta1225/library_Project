@@ -388,13 +388,12 @@ class data extends db {
     }
     
     // issue book
-    function issuebook($book,$userselect,$days,$getdate,$returnDate,$fine){
+    function issuebook($book,$userselect,$days,$getdate,$returnDate){
         $this->$book= $book;
         $this->$userselect=$userselect;
         $this->$days=$days;
         $this->$getdate=$getdate;
         $this->$returnDate=$returnDate;
-        $this->$fine = $fine;
 
 
         $q="SELECT * FROM book where bookname='$book'";
@@ -447,7 +446,15 @@ class data extends db {
 
 
     }
-
+    function searchBooks($search) {
+        $q = "SELECT * FROM book 
+              WHERE bookava > 0 AND 
+              (bookname LIKE '%$search%' OR bookaudor LIKE '%$search%' OR branch LIKE '%$search%')";
+        $data = $this->connection->query($q);
+        return $data;
+    }
+    
+//fine update.............
 function updateFine($user_id) {
     $this->setconnection();
     $today = DateTime::createFromFormat('d/m/Y', date("d/m/Y")); // Current date
@@ -470,15 +477,6 @@ function updateFine($user_id) {
         }
     }
 }
-    function searchBooks($search) {
-        $q = "SELECT * FROM book 
-              WHERE bookava > 0 AND 
-              (bookname LIKE '%$search%' OR bookaudor LIKE '%$search%' OR branch LIKE '%$search%')";
-        $data = $this->connection->query($q);
-        return $data;
-    }
-    
-    
 
     
 }
