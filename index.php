@@ -10,18 +10,19 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="css/styles.css"> <!-- Your custom styles -->
+    <link rel="stylesheet" href="css/styles.css">
  
 </head>
 
 <body>
 
 <!-- Header Start -->
-<header>
-<div class="container d-flex justify-content-between align-items-center">
-        <h1>BookAdda Digital Library</h1>
-    </div>
-</header>
+ <header class="header">
+        <div class="logo">
+            <img class="iglogo" src="images/logo1.png" alt="Library Logo">
+        </div>
+        <h1 id="changing-heading">Book Adda Digital Library</h1>
+    </header>
 <!-- Header End -->
 
 <?php

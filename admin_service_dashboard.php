@@ -15,8 +15,8 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- <link rel="stylesheet" href="style.css"> -->
     </head>
-    <style>
-   /* Reset and base */
+<style>
+ 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -127,14 +127,14 @@ form h2 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 28px;
-    color: #343a40;
+     color:hsl(207, 100.00%, 1.80%);
 }
 
 form label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #495057;
+    color:hsl(207, 100.00%, 1.80%);
 }
 
 form input[type="text"],
@@ -163,7 +163,7 @@ form textarea:focus {
 form button,
 form input[type="submit"] {
     background-color: #007bff;
-    color: white;
+    color:hsl(207, 100.00%, 1.80%);
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
@@ -237,7 +237,7 @@ th, td {
 }
 th {
     background-color: #007bff;
-    color: white;
+    color:hsl(207, 100.00%, 1.80%);
     font-weight: bold;
 }
 td {
@@ -585,7 +585,6 @@ elseif($msg=="fail"){
 
             </div>
             </div>
-     
         <script>
         function openpart(portion) {
         var i;
@@ -608,6 +607,7 @@ setInterval(() => {
     currentColor = (currentColor + 1) % colors.length;
 }, 5000); // 5000ms = 5 seconds
         </script>
+
     </body>
 </html>
 

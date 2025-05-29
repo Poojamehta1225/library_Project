@@ -13,10 +13,10 @@ $userloginid = $_GET['userlogid'];
 $u = new data;
 $u->setconnection();
 
-// ✅ Call your returnbook() method
+// Call returnbook() method
 $u->returnbook($returnid);
 
-// ✅ Redirect user back to dashboard
+// Redirect user back to dashboard
 header("Location: otheruser_dashboard.php?userlogid=$userloginid&msg=Returned");
 exit();
 ?>

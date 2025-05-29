@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            background: #f3f3f3;
+            background:rgb(183, 238, 177);
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -23,8 +23,8 @@
 
         h2 {
             text-align: center;
-            margin-bottom: 30px;
-            color: #333;
+            margin-bottom: 30px;    
+            color: darkgreen;
         }
 
         input, textarea {
@@ -36,7 +36,7 @@
         }
 
         input[type="submit"] {
-            background: #667eea;
+            background:rgb(115, 181, 106);
             color: white;
             border: none;
             cursor: pointer;
@@ -44,7 +44,7 @@
         }
 
         input[type="submit"]:hover {
-            background: #5a67d8;
+            background:rgb(150, 248, 114);
         }
 
         @media (max-width: 600px) {

@@ -47,17 +47,6 @@ body{
     width: 100%;
 }
 
-/* Section background */
-.sec_img {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url('images/library-background.jpg') no-repeat center center/cover;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
 /* Inner box styling */
 .box {
     background: rgba(255, 255, 255, 0.1);
@@ -268,15 +257,6 @@ header .home-btn:hover {
             font-size: 18px;
         }
     }
-    
-/*
-
-.alert h4 {
-    text-align: center;
-    color: #d9534f;
-    margin-bottom: 20px;
-    font-weight: 600;
-}*/
 .alert-wrapper {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -506,12 +486,6 @@ form input[type="file"] {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
     .content {
         margin-left: 0;
     }
@@ -575,6 +549,7 @@ form button {
   
   .custom-table th {
     background-color: #0e042d;
+    color:wheat;
     position: sticky;
     top: 0;
     z-index: 1;
