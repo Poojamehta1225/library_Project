@@ -543,14 +543,14 @@ elseif($msg=="fail"){
 
             <img width='150px' height='150px' style='border:1px solid #333333; float:left;margin-left:20px' src="uploads/<?php echo $bookimg?> "/>
             </br>
-            <p style="color:black"><u>Book Name:</u> &nbsp&nbsp<?php echo $bookname ?></p>
-            <p style="color:black"><u>Book Detail:</u> &nbsp&nbsp<?php echo $bookdetail ?></p>
-            <p style="color:black"><u>Book Authour:</u> &nbsp&nbsp<?php echo $bookauthour ?></p>
-            <p style="color:black"><u>Book Publisher:</u> &nbsp&nbsp<?php echo $bookpub ?></p>
-            <p style="color:black"><u>Book Branch:</u> &nbsp&nbsp<?php echo $branch ?></p>
-            <p style="color:black"><u>Book Price:</u> &nbsp&nbsp<?php echo $bookprice ?></p>
-            <p style="color:black"><u>Book Available:</u> &nbsp&nbsp<?php echo $bookava ?></p>
-            <p style="color:black"><u>Book Rent:</u> &nbsp&nbsp<?php echo $bookrent ?></p>
+            <p style="color:black">&nbsp&nbsp&nbspBook Name: &nbsp&nbsp<?php echo $bookname ?></p>
+            <p style="color:black">&nbsp&nbsp&nbspBook Detail: &nbsp&nbsp<?php echo $bookdetail ?></p>
+            <p style="color:black">&nbsp&nbsp&nbspBook Authour: &nbsp&nbsp<?php echo $bookauthour ?></p>
+            <p style="color:black">&nbsp&nbsp&nbspBook Publisher: &nbsp&nbsp<?php echo $bookpub ?></p>
+            <p style="color:black">&nbsp&nbsp&nbspBook Branch: &nbsp&nbsp<?php echo $branch ?></p>
+            <p style="color:black">&nbsp&nbsp&nbspBook Price: &nbsp&nbsp<?php echo $bookprice ?></p>
+            <p style="color:black">&nbsp&nbsp&nbspBook Available: &nbsp&nbsp<?php echo $bookava ?></p>
+            <p style="color:black">&nbsp&nbsp&nbspBook Rent: &nbsp&nbsp<?php echo $bookrent ?></p>
 
 
                  </div>
